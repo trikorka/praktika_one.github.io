@@ -2,9 +2,10 @@
   --bs-primary-rgb: 219, 159, 106;
   --bs-dark-rgb: 18, 16, 12;
   --bs-secondary-rgb: 42, 39, 34;
+  --bs-link-color: 18, 16, 12;
 }
 
-.display-4, .h2, .h1 {
+.display-4, .h1, .h2, .h3 {
   font-family: "Sancreek", sans-serif;
 }
 
@@ -22,6 +23,11 @@ main {
 
 .navbar {
   border-radius: var(--bs-border-radius);
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-color: #12100C;
+  --bs-nav-pills-link-active-bg: #DB9F6A;
 }
 
 /*# sourceMappingURL=style.css.map */
