@@ -1,0 +1,25 @@
+:root {
+  --bs-primary-rgb: 219, 159, 106;
+  --bs-dark-rgb: 18, 16, 12;
+  --bs-secondary-rgb: 42, 39, 34;
+}
+
+.display-4, .h2, .h1 {
+  font-family: "Sancreek", sans-serif;
+}
+
+main {
+  margin-top: 140px;
+}
+
+.btn-primary {
+  --bs-btn-bg: rgba(var(--bs-primary-rgb));
+  --bs-btn-border-color: 0, 0, 0;
+  --bs-btn-hover-bg: rgba(var(--bs-dark-rgb), 0.5);
+  --bs-btn-color: rgba(var(--bs-dark-rgb));
+  --bs-btn-font-weight: bold;
+}
+
+.navbar {
+  border-radius: var(--bs-border-radius);
+}
