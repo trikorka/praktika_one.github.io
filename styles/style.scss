@@ -5,6 +5,10 @@
   --bs-link-color: 18, 16, 12;
 }
 
+body {
+  font-family: "Raleway", Helvetica, sans-serif;
+}
+
 .display-4, .h1, .h2, .h3 {
   font-family: "Sancreek", sans-serif;
 }
@@ -37,4 +41,40 @@ main {
 .navbar-toggler-icon {
   background-image: url('../images/navtogglericon.svg');
   background-size: contain;
+}
+
+.accordion {
+  --bs-accordion-bg: none;
+  --bs-accordion-color: white;
+  --bs-accordion-border-color: none;
+
+  &-body {
+    border-bottom: rgba(255, 255, 255, 0.2) solid 2px;
+  }
+
+  &-button {
+    color: white;
+
+    &:not(.collapsed) {
+      color: white;
+      background-color: var(--bs-primary-rgb);
+      box-shadow: none;
+    }
+
+    &.collapsed {
+      border-bottom: rgba(255, 255, 255, 0.2) solid 2px;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.collapsed::after {
+      background-image: url('../images/add.svg');
+    }
+
+    &:not(.collapsed)::after {
+      background-image: url('../images/minus.svg');
+    }
+  }
 }
