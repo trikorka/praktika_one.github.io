@@ -30,4 +30,13 @@ main {
   --bs-nav-pills-link-active-bg: #DB9F6A;
 }
 
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/navtogglericon.svg");
+  background-size: contain;
+}
+
 /*# sourceMappingURL=style.css.map */
