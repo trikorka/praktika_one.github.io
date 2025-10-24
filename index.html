@@ -58,7 +58,7 @@
     </header>
 
     <main class="container-fluid p-0 justify-content-center">
-        <section id="section-home" class="container-lg row mx-auto">
+        <section id="section-home" class="container-lg row mx-auto hidden fade-in">
             <div class="col-12 col-md-6">
                 <h1 class="display-4 col-8">
                     Body paintings that Defies Your Soul
@@ -82,7 +82,7 @@
             </figure>
         </section>
 
-        <section class="container-fluid py-2 mt-5 mt-md-0 bg-secondary d-flex flex-column align-items-center">
+        <section class="container-fluid py-2 mt-5 mt-md-0 bg-secondary d-flex flex-column align-items-center hidden fade-in">
             <div class="row container-lg justify-content-center align-items-center">
                 <div class="col-6 col-sm-4 col-lg-2 ">
                     <div class="brand-item text-center p-3">
@@ -117,8 +117,8 @@
             </div>
         </section>
 
-        <section id="section-our-services" class="container-lg row mt-5 mx-auto">
-            <h2 class="h2 text-center">Our Services</h2>
+        <section id="section-our-services" class="container-lg row mt-5 mx-auto hidden fade-in">
+            <h2 class="h2 text-center mb-4">Our Services</h2>
 
             <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
                 <li class="nav-item " role="presentation">
@@ -219,35 +219,30 @@
             </div>
         </section>
 
-        <section id="section-reviews" class="container-lg row mt-5 mx-auto">
+        <section id="section-reviews" class="container-lg row mt-5 mx-auto hidden fade-in">
             <h2 class="h2 text-center mb-5">What Clients say?!</h2>
             <div class="col-12 col-md-6 mx-auto">
                 <div id="carouselExampleCaptions" class="carousel slide p-4 bg-secondary rounded">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="images/Star%203.png" class="d-block w-20 mx-auto" alt="star1">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption">
                                 <h5 class="h4 text-start ">Carolina Stones</h5>
-                                <p class="text-start">I recently had the pleasure of getting a tattoo at Fighting Star, and I couldn't be happier with the entire experience. From start to finish, everything about this tattoo shop exceeded my expectations.</p>
+                                <p class="text-start">I recently had the pleasure of getting a tattoo at Fighting Star, and I couldn't be happier with the entire experience. From start to finish, everything about this tattoo shop exceeded my expectations. I hope I will visit this place soon again!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/Star%204.png" class="d-block w-20 mx-auto" alt="star2">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption">
                                 <h5 class="h4 text-start">Star 2</h5>
-                                <p class="text-start">...</p>
+                                <p class="text-start">I recently visited Fighting Star for a new tattoo, and the experience was amazing from beginning to end. The artists were professional, the atmosphere was welcoming, and the final result was even better than I imagined. I couldn’t be happier with my visit!</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/Star%205.png" class="d-block w-20 mx-auto" alt="star3">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption">
                                 <h5 class="h4 text-start">Star 3</h5>
-                                <p class="text-start">...</p>
+                                <p class="text-start">Getting my tattoo at Fighting Star was an incredible experience. The team made me feel comfortable from the moment I walked in, and their attention to detail was outstanding. I absolutely love my tattoo and highly recommend this shop to anyone considering getting inked.</p>
                             </div>
                         </div>
                     </div>
@@ -263,7 +258,7 @@
             </div>
         </section>
 
-        <section id="section-faq" class="container-lg row mt-5 mx-auto">
+        <section id="section-faq" class="container-lg col-12 col-xl-6 row mt-5 mx-auto hidden fade-in">
             <h2 class="h2 text-center">F.A.Q.</h2>
 
             <div class="accordion" id="accordionExample">
@@ -320,7 +315,7 @@
             </div>
         </section>
 
-        <section id="section-form" class="container-lg mt-5 mx-auto col-10 col-md-6 mt-5 p-3 row bg-light text-dark rounded d-flex">
+        <section id="section-form" class="container-lg mt-5 mx-auto col-10 col-md-6 mt-5 p-3 row bg-light text-dark rounded d-flex hidden fade-in">
             <div class="col-12 row">
                 <figure class="figure col-4 m-0">
                     <img src="images/email.svg" class="figure-img img-fluid rounded" alt="email illustration">
@@ -371,7 +366,7 @@
         </div>
     </main>
 
-    <footer class="mt-5 bg-secondary text-light py-5">
+    <footer class="mt-5 bg-secondary text-light py-5 hidden fade-in">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -418,6 +413,57 @@
             }, 5000);
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('#carouselExampleCaptions');
+            const carouselInstance = new bootstrap.Carousel(carousel);
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const swipeThreshold = 50;
+
+            carousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeDistance = touchEndX - touchStartX;
+                if (Math.abs(swipeDistance) > swipeThreshold) {
+                    if (swipeDistance < 0) {
+                        carouselInstance.next();
+                    } else {
+                        carouselInstance.prev();
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05
+            });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
