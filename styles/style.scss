@@ -3,6 +3,7 @@
   --bs-dark-rgb: 18, 16, 12;
   --bs-secondary-rgb: 42, 39, 34;
   --bs-link-color: 18, 16, 12;
+  --bs-body-bg: #FFF4EB;
 }
 
 
@@ -136,4 +137,29 @@ main {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.modal {
+  &-header, &-footer {
+    border: none;
+  }
+
+  &-content {
+    overflow: hidden;
+  }
+}
+
+.figure-1 {
+  right: -50px;
+  bottom: -50px;
+  transform: scaleX(-1);
+}
+
+.figure-2 {
+  left: -50px;
+  bottom: -50px;
+}
+
+.form-control {
+  background-color: white;
 }
